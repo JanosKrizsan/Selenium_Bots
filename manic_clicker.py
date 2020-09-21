@@ -4,10 +4,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 def actions(driver, ID, clicks):
 	actions = ActionChains(driver)
 	actions.double_click(driver.find_element_by_id(ID))
-	counter = 0
-	while counter <= clicks:
+	for i in range(clicks):
 		actions.perform()
-		counter += 1
 
 def run_me():
 
