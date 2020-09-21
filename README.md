@@ -2,7 +2,7 @@
 ![Selenium](https://imgur.com/2T3JRuf.png)
 ## Quora Helper ✍️
 
-#### DISCLAIMER: *I am not liable for anything that happens to your account. Using bots of the sort might go against the policies of Quora and can get you banned. These were made purely for educational reasons.*
+#### DISCLAIMER: *I am not liable for anything that happens to your account. Using bots of the sort might go against the policies of Quora and can get you banned. These were made purely for educational purposes.*
 
 ### Auto-Inviter
 
