@@ -51,4 +51,5 @@ You could also create an executable from the python script using either [py2exe]
 
 ## Misc.
 
-For less hassle, I am using Sublime Text for these.
+For less hassle, I am using Sublime Text for these.<br>
+For an ST 3 cheat sheet click [here](https://www.shortcutfoo.com/app/dojos/sublime-text-3-win/cheatsheet)
