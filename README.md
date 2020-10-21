@@ -7,6 +7,7 @@
 ### Auto-Inviter
 
 How to:<br>
+- Provide path sans filename of the webdriver
 - Provide how many questions to review
 - No need to do anything else
 
@@ -39,6 +40,7 @@ A good site to try it on might be [Cookie Clicker](http://orteil.dashnet.org/coo
 
 - Python
 - IDE
+- Chrome Webdriver
 
 [Python](https://www.python.org/downloads/)<br>
 
@@ -48,6 +50,8 @@ If you are using Sublime Text as your IDE, consider the Terminus package as ST i
 [How To Install Sublime Text Packages](https://packagecontrol.io/installation)
 
 You could also create an executable from the python script using either [py2exe](http://www.py2exe.org/) or the [auto-py-to-exe](https://dev.to/eshleron/how-to-convert-py-to-exe-step-by-step-guide-3cfi).
+
+Download the [webdriver] in order to use the code included.
 
 ## Misc.
 
