@@ -55,5 +55,10 @@ Download the [webdriver] in order to use the code included.
 
 ## Misc.
 
-For less hassle, I am using Sublime Text for these.<br>
-For an ST 3 cheat sheet click [here](https://www.shortcutfoo.com/app/dojos/sublime-text-3-win/cheatsheet)
+- For less hassle, I am using Sublime Text for these.<br>
+- For an ST 3 cheat sheet click [here](https://www.shortcutfoo.com/app/dojos/sublime-text-3-win/cheatsheet)
+- A possible refactoring into OOP shall be done.
+
+#### Quora Helper
+
+- It was found - and rectified - during testing that the site changes the CSS if it receives too many login requests within a short while.
