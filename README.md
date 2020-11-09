@@ -15,15 +15,6 @@ Description:<br>
 It scrolls the page down enough to load the required number of questions, just as a user would do, then extracts and sorts these questions. Invites the possible daily amonunt
 of people to those questions which have less than 3 answers.
 
-### Revenue-Ratio Checker | Keyword Extractor
-
-How to:<br>
-- No need to do anything
-
-Description:<br>
-It checks the ratio of views and adsense of high-earning questions and if the ratio is 2:1 or better it will extract relevant keywords from those questions. It will save all the info to a .TXT file in the format of:<br>
-`question | ratio | [keyword_1, keyword_2, ...]`
-
 ## Manic Clicker 🖱
 
 How to:<br>
