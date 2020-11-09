@@ -22,7 +22,6 @@ def find_by_path(parent, path):
 def get_daily_invs(parent):
 	a_to_a_sec = find_by_path(parent, '//*[contains(@class, "a2a_section")]')
 	total_requests = int(find_by_path(a_to_a_sec, '//*[contains(@id, "total_request_count")]').text)
-	print(total_requests)
 	try:
 		daily_requests_done = int(find_by_path(a_to_a_sec, '//*[contains(@id, "daily_request_count")]').text)
 		if daily_requests_done >= 25:
@@ -34,7 +33,7 @@ def get_daily_invs(parent):
 
 def get_answer_count(parent):
 	ans_count = int(find_by_path(parent, '//*[contains(@id, "create_modal_link")]/span[5]').text[:2])
-	return ans_count <= 3
+	return ans_count < 3
 
 def wait_certain(time_to_wait):
 	driver.implicitly_wait(time_to_wait)
@@ -54,14 +53,10 @@ def sort(questions):
 		if get_daily_invs(question) and get_answer_count(question):
 			link = find_by_path(question, "//*[contains(@id, '_link')]").get_attribute("href").text
 			answers = get_answer_count(question)
-			print(link + "\n" + answers)
 			q_links.append(link)
 			q_answer.append(answers)
-	q_collection = dict(zip(q_links, q_answers))
-	for q in q_collection:
-		print(q)
-	input("testing")
-	#return removed for testing
+
+	return dict(zip(q_links, q_answers))
 
 def check_proxy():
 	driver.get('https://httpbin.org/ip')
@@ -71,8 +66,7 @@ def check_proxy():
 
 def create_proxified_driver(path):
 	global proxy
-	#proxy = input("Add your proxy to connect to.\n").split(":")
-	proxy = "xxxxxxxx"
+	proxy = input("Add your proxy to connect to.\n").split(":")
 	return get_nonauth_driver(path, proxy) if len(proxy.split(":")) == 2 else get_auth_driver(path, False, proxy)
 
 def type_login(field, text):
@@ -84,10 +78,8 @@ def type_login(field, text):
 #region Main_Functions
 
 def login():
-	#email = input("Provide your username.")
-	#password = input("Provide your password.")
-	email = "xxxxxxxx"
-	password = "xxxxxxxx"
+	email = input("Provide your username.")
+	password = input("Provide your password.")
 
 	details = [email, password]
 
@@ -112,11 +104,8 @@ def login():
 
 def setup():
 
-	#path = input("Path to Chrome webdriver:\n")
-	#q_to_rev = int(input("How many questions should we review?\n"))
-
-	path = r"C:\Selenium" # for testing purposes
-	q_to_rev = 100
+	path = input("Path to Chrome webdriver:\n")
+	q_to_rev = int(input("How many questions should we review?\n"))
 
 	global driver
 
@@ -152,15 +141,14 @@ def do_actions(req_btn):
 
 	for button in invite_btns:
 		if sugg_writers < 25:
-			wait(1, 3)
+			wait(3, 5)
 			actions.click(button)
 
 def invite(sorted_items):
 	for question in sorted_items:
-		print(question)
 		driver.find_element_by_tag_name("body").send_keys(Keys.LEFT_CONTROL + 't')
 		driver.get(question.text)
-		wait(1, 3)
+		wait(3, 5)
 		buttons = driver.find_elements_by_class_name("q-text")
 		req_button = [i for i in items if i.text == "Request"][0]
 
